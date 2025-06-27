@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ENEM</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./assets/css/index.css">
+
+    <link rel="icon" href="./assets/images/logo.png">
 </head>
 <body>
 
@@ -16,16 +18,21 @@
             <div class="container">
                 <div class="header-container">
                     <div class="d-flex gap-5">
-                    <span class="logo">
-                        <img src="./assets/images/logo.png" alt="">
-                    </span>
+                        <span class="logo">
+                            <img src="./assets/images/logo.png" alt="">
+                        </span>
                         <h1>Entrepreneurial Empire <br> Private Limited</h1>
+                        <button class="hamburger d-md-none">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </button>
                     </div>
                     <ul class="header-links">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Contact Us</a></li>
+                        <li><a href="" class="active"><i class="fa fa-home d-md-none me-2"></i> Home</a></li>
+                        <li><a href=""><i class="fa fa-info-circle d-md-none me-2"></i> About</a></li>
+                        <li><a href=""><i class="fa fa-gear d-md-none me-2"></i> Services</a></li>
+                        <li><a href=""><i class="fa fa-envelope d-md-none me-2"></i> Contact Us</a></li>
                     </ul>
                  </div>
             </div>
@@ -102,6 +109,7 @@
         </div>
     </section>
     <section class="introduction">
+        <img class="introImgDeco" src="./assets/images/person-removebg-preview.png" alt="">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
@@ -128,7 +136,7 @@
             </div>
         </div>
     </section>
-    <section class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="text-center">
                 <h2>Have an idea? <br>
@@ -137,11 +145,11 @@
                 </h2>
                 <h3>LET’S GROW TOGETHER</h1>
             </div>
-            <div class="footer-bottom d-flex justify-content-between align-items-end">
-                <div class="d-flex align-items-end gap-5">
-                    <span class="footer-logo">
+            <div class="footer-bottom">
+                <div class="d-md-flex align-items-end gap-5">
+                    <div class="footer-logo mb-4 mb-md-0">
                     <img src="./assets/images/logo.png" alt="">
-                    </span>
+                    </div>
                     <span class="social-icons">
                         <a href="" class="icon">
                             <i class="fa fa-instagram"></i>
@@ -154,21 +162,34 @@
                         </a>
                     </span>
                 </div>
-                <div>
-                    <div class="address">
+                <div class="mb-5 mb-md-0">
+                    <div class="address mb-3 mb-md-0">
                         <p class="mb-0">Mannanam, Kottayam</p>
                         <p class="mb-0">686561, Kerala</p>
                         <hr>
                     </div>
                     <div class="mobEmail">
-                         <p><i class="fa fa-phone me-2"></i>  8714163018, 7736003018</p>
+                         <p><i class="fa fa-phone me-2 mb-0 mb-md-3"></i>  8714163018, 7736003018</p>
                         <p><i class="fa fa-envelope me-2"></i> info@enempvtltd.com</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="footerFixedIcons">
+            <div class="pulse-wrapper whatsapp">
+                <button class="fixedIcon whatsapp">
+                <i class="fa fa-whatsapp"></i>
+                </button>
+            </div>
+            <div class="pulse-wrapper instagram">
+                <button class="fixedIcon instagram">
+                <i class="fa fa-instagram"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <script src="./assets/js/plugins.js"></script>
+<script src="./assets/js/app.js"></script>
 </html>
