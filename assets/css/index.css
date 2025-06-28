@@ -60,6 +60,9 @@ font-family: "Raleway", sans-serif;
         padding-bottom: 2px;
         border-bottom: 4px solid #53e9f6;
     }
+    .header-links li a:hover{
+        font-weight: 600;
+    }
 }
 @media(max-width:769px){
     .header-links li a.active{
@@ -78,6 +81,8 @@ font-family: "Raleway", sans-serif;
     letter-spacing: 10px;
     font-weight: 300;
     font-family: 'Outfit';
+    opacity: 0; /* initial state */
+    animation: headingLoadAnimation 1s ease-out forwards;
 }
 .hero-content .sub-title{
     font-size: 24px;
@@ -201,7 +206,55 @@ font-family: "Raleway", sans-serif;
     .hero-content{
         z-index: 2;
         top: 50%;
+        transform: translateY(-80%);
+    }
+    .headerSocialLinks ul{
+        padding: 0;
+        list-style: none;
+        margin: 0 -30px;
+    }
+    .headerSocialLinks ul li{
+        padding: 8px 30px;
+        border: 0 !important;
+    }
+    .headerSocialLinks ul li i{
+        font-size: 22px;
+    }
+    .headerSocialLinks ul li:not(:last-child){
+        margin-bottom: 8px;
+    }
+    .headerSocialLinks ul li.whatsapp {
+    background: linear-gradient(135deg, rgba(37,211,102,0.1), rgba(18,140,126,0.1));
+    }
+    .headerSocialLinks ul li.facebook {
+        background: linear-gradient(135deg, rgba(24,119,242,0.1), rgba(20,93,191,0.1));
+    }
+    .headerSocialLinks ul li.youtube {
+        background: linear-gradient(135deg, rgba(255,0,0,0.1), rgba(204,0,0,0.1));
+    }
+    .headerSocialLinks ul li.email {
+        background: linear-gradient(135deg, rgba(212,70,56,0.1), rgba(166,27,20,0.1));
+    }
+    .headerSocialLinks ul li.instagram {
+        background: linear-gradient(45deg, rgba(245,133,41,0.1), rgba(221,42,123,0.1), rgba(129,52,175,0.1));
+    }
+    .headerSocialLinks ul li.phone {
+        background: linear-gradient(135deg, rgba(52,199,89,0.1), rgba(40,167,69,0.1));
+    }
+
+    .headerSocialLinks ul li {
+        position: relative;
+        overflow: hidden; /* hides the overflowing icon */
+        height: 40px;
+    }
+
+    .headerSocialLinks ul li i {
+        position: absolute;
+        left: 30px;
+        top: 50%;
         transform: translateY(-50%);
+        transition: left 0.3s ease;
+        touch-action: pan-y; /* ensures swipe works */
     }
 }
 
@@ -213,6 +266,8 @@ section{
     font-size: 60px;
     font-weight: 400;
     margin-bottom: 60px;
+    opacity: 0;
+    animation: slideDownFadeIn 0.8s ease-out forwards;
 }
 
 section.introduction{
@@ -244,6 +299,7 @@ section.introduction{
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.171);
     padding: 30px;
     border: none;
+    overflow: hidden;
 }
 
 .widget{
@@ -254,6 +310,18 @@ section.introduction{
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 15px;
+    position: relative;
+}
+
+.card-icon{
+    opacity: 0.2;
+    color: #9daede;
+    position: absolute;
+    z-index: -1;
+}
+
+.card-icon i{
+    font-size: 90px;
 }
 
 .widget-title{
@@ -484,4 +552,110 @@ hr{
         height: 40px;
         font-size: 24px;
     }
+}
+
+
+.animateRight i {
+  opacity: 0;
+  transform: translateX(0);
+  animation: chevronSwipe 1.2s ease-in-out infinite;
+  display: inline-block;
+}
+
+.animateRight i:first-child {
+  animation-delay: 0s;
+}
+
+.animateRight i:last-child {
+  animation-delay: 0.3s;
+}
+
+@keyframes chevronSwipe {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  60% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes headingLoadAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDownFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDownUp {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(20px);
+  }
+}
+.scrollToTop{
+    background: #000000;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    animation: slideDownUp 2.5s ease-in-out infinite;
+    position: fixed;
+    inset: auto auto 40px auto;
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background: #fff;
+  padding: 20px;
+  cursor: pointer; /* hint for tap */
+  user-select: none;
+}
+
+/* When visible after scroll */
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover and tap effect */
+.card:hover,
+.card:focus,
+.card:active {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px #c7faffb7;
+  outline: none;
 }
