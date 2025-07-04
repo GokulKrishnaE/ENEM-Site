@@ -316,12 +316,21 @@ section.introduction{
 .card-icon{
     opacity: 0.2;
     color: #9daede;
-    position: absolute;
-    z-index: -1;
+    /* position: absolute; */
+    /* z-index: -1; */
 }
 
 .card-icon i{
-    font-size: 90px;
+    font-size: 50px;
+}
+.card-icon img{
+    width: 65px;
+}
+
+@media(max-width:767px){
+    .card-icon img{
+        width: 45px;
+    }
 }
 
 .widget-title{
@@ -468,7 +477,18 @@ hr{
     opacity: 0;
   }
 }
-
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideFadeIn2 {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .pulse-wrapper {
   position: relative;
@@ -658,4 +678,121 @@ hr{
   transform: scale(1.03);
   box-shadow: 0 10px 20px #c7faffb7;
   outline: none;
+}
+.subpage-heading{
+    font-size: 80px;
+    text-align: center;
+    transform: translateY(80px);
+    animation: slideFadeIn2 1.2s ease-out forwards;
+}
+.hero.subpagebanner{
+    height: 50vh;
+    min-height: 600px;
+    background-color: #c7faff40;
+}
+
+.subpage-section-title{
+    font-size: 40px;
+    font-weight: 600;
+    transform: translateY(20px);
+     animation: slideFadeIn 1.2s ease-out forwards;
+}
+
+@media(min-width:1200px){
+    .max-80{
+        max-width: 80%;
+        min-width: 1040px;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width:1200px){
+    .subpage-heading{
+        font-size: 40px;
+        text-align: center;
+    }
+    .hero.subpagebanner{
+        height: 40vh;
+        min-height: 300px;
+        background-color: #c7faff40;
+    }
+}
+
+
+
+@media(max-width:991px){
+    p{
+    font-size: 16px;
+}
+
+}
+.imageRow{
+    margin: 80px 0;
+    img{
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.4s ease-in-out;
+    }
+    img:hover{
+        transform: scale(1.1);
+    }
+}
+
+.cardsRow{
+    margin: 80px 0;
+    p{
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+.cardsRow .card{
+    padding: 0;
+}
+.cardsRow .card .card-body{
+    padding: 20px;
+}
+
+.cardsRow .card-image img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.contactRow{
+    margin-top: 80px;
+
+}
+
+@media(min-width:991px){
+    .contactRow{
+        --bs-gutter-x: 100px;
+
+    }
+}
+
+.btn-primary{
+    background-color: #000000;
+    border-color: #000000;
+    color: white;
+    font-size: 18px;
+    padding: 8px 28px;
+}
+.btn i{
+      animation: chevronSwipe 1.2s ease-in-out infinite;
+}
+.btn-primary:hover{
+    background-color: #53e9f6;
+    border-color: #53e9f6;
+    color: black;
+    font-size: 18px;
+    padding: 8px 28px;
+}
+
+.contact-item h2{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.contact-item p:not(:last-child){
+    margin-bottom: 8px;
 }
